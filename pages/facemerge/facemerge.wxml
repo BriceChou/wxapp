@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="page__bd_spacing">
+    <view class="page__title">人脸融合</view>
+    <view class="page__desc">为保证人脸融合效果，请上传五官端正的正脸照片。</view>
+  </view>
+  <view class="page__bd_spacing">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="upload" bindtap="onUploadImageClick">
+          <image src="/assets/icon/screenshot.png" class="btn-icon"></image>
+          <text class="upload-btn weui-btn weui-btn_primary">上传图片</text>
+        </view>
+      </view>
+    </view>
+    <view class="weui-flex" hidden='{{canvasHidden}}'>
+      <canvas class="canvas" id="imgCanvas" canvas-id="imgCanvas" disable-scroll="true" />
+    </view>
+  </view>
+  <view class="page__bd_spacing" hidden='{{tipHidden}}'>
+    <!-- Tips start -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">正确示例图片：
+            <view class="weui-media-box__desc">
+              <image class='sample-icon' mode="aspectFit" src='/assets/img/avater_sample.jpg'></image>
+            </view>
+          </view>
+          <view class="weui-media-box__title weui-media-box__title_in-text">友情提示：</view>
+          <view class="weui-media-box__desc">1. 尽量上传人脸清晰的近景自拍照；</view>
+          <view class="weui-media-box__desc">2. 目前只支持一种模板，后期我们会开发新模板进行融合；</view>
+        </view>
+      </view>
+    </view>
+    <!-- Tips end -->
+  </view>
+  <view class="page__bd" hidden='{{resPanelHidden}}'>
+    <view class="weui-panel__bd ">
+      <view class="weui-flex__item">
+        <image src="data:image/jpg;base64,{{base64}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

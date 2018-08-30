@@ -1,0 +1,6 @@
+/* pages/facemerge.wxss */
+@import '../index/index.wxss';
+
+page {
+  /* overflow: hidden; */
+}

@@ -1,0 +1,70 @@
+<view class="page">
+  <view class="page__bd_spacing">
+    <view class="page__title">硬币识别</view>
+    <view class="page__desc">由于货币背面图案会存在相同，请尽量提供硬币正面照片。</view>
+  </view>
+  <view class="page__bd_spacing">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="upload" bindtap="onUploadImageClick">
+          <image src="/assets/icon/screenshot.png" class="btn-icon"></image>
+          <text class="upload-btn weui-btn weui-btn_primary">上传图片</text>
+        </view>
+        <view class="page__desc btn-info">
+          <image class="icon" src="/assets/icon/marker.png"></image>
+          <text> 当前地理位置：{{currentLocation}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="weui-flex" hidden='{{canvasHidden}}'>
+      <canvas class="canvas" id="imgCanvas" canvas-id="imgCanvas" disable-scroll="true" />
+    </view>
+  </view>
+  <view class="page__bd" hidden='{{tipHidden}}'>
+    <!-- Tips start -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">正确示例图片：
+            <view class="weui-media-box__desc">
+              <image class='sample-icon' mode="aspectFit" src='/assets/img/coin_sample.jpg'></image>
+            </view>
+          </view>
+          <view class="weui-media-box__title weui-media-box__title_in-text">友情提示：</view>
+          <view class="weui-media-box__desc">1. 硬币识别主要提供：面值，国家，发行年份，基本简介等信息；</view>
+          <view class="weui-media-box__desc">2. 目前只支持中国发行的纪念币及流通货币识别；</view>
+          <view class="weui-media-box__desc">3. 由于绝大数货币背面图案会存在相同情况，请尽量提供硬币正面照片；</view>
+          <view class="weui-media-box__desc">4. 当前软件处于测试中，数据会慢慢完善，未来可支持世界各国硬币识别。</view>
+        </view>
+      </view>
+    </view>
+    <!-- Tips end -->
+  </view>
+  <view class="page__bd" hidden='{{resPanelHidden}}'>
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">参考结果如下：</view>
+      <view class="weui-panel__bd " wx:for="{{resultList}}">
+        <navigator url="" class="weui-media-box weui-media-box_appmsg " hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="/assets/icon/coin_home.png" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg" wx:if="{{item.unknown}}">
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>我们数据库还未记录该数据哟！请联系我们更新数据库吧！</view>
+            </view>
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg" wx:else>
+            <view class="weui-media-box__title">{{item.probability}}% 的概率是 {{item.value}} 硬币</view>
+            <view class="weui-media-box__desc">
+              <text>该硬币为{{item.value}}钱的</text>
+              <text wx:if="{{item.side == 'front'}}">正面</text>
+              <text wx:else>反面</text>
+              <text>照，其发行年份为：{{item.years}} 年</text>
+              <text wx:if="{{item.info}}">，硬币小知识：{{item.info}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

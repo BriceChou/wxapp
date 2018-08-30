@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/facemerge/facemerge"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "顽币 PlayCoin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#444444",
+    "selectedColor": "#602679",
+    "backgroundColor": "#fff",
+    "borderStyle": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "assets/icon/many_coin_slked.png",
+        "iconPath": "assets/icon/many_coin.png",
+        "pagePath": "pages/index/index",
+        "text": "硬币识别"
+      },
+      {
+        "selectedIconPath": "assets/icon/facemerge_slked.png",
+        "iconPath": "assets/icon/facemerge.png",
+        "pagePath": "pages/facemerge/facemerge",
+        "text": "人脸融合"
+      }
+    ]
+  }
+}
