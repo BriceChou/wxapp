@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.4",
-	"appid": "yourappid",
-	"projectname": "play coin",
+	"appid": "https://bricechou.github.io",
+	"projectname": "play_coin",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

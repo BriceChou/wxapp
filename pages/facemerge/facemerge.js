@@ -1,7 +1,8 @@
 // pages/facemerge.js
-var util = require('../../common/util.js')
-var api = require('../../common/faceMergeAPI.js')
-import ImageHandler from '../../common/imageHandler.js'
+var util = require('../../common/util')
+var api = require('../../common/faceMergeAPI')
+import ImageHandler from '../../common/imageHandler'
+import UploadHandler from '../../common/uploadHandler'
 
 Page({
 
@@ -30,6 +31,7 @@ Page({
         let filePath = res.tempFilePaths[0]
         that.handler.setImage(filePath)
           .then((res) => {
+            that.cosHandler.uploadFile(filePath)
             return api.request(res)
           })
           .then((data) => {
@@ -56,6 +58,7 @@ Page({
   onLoad: function(options) {
     this.canvasId = 'imgCanvas'
     this.handler = new ImageHandler(this)
+    this.cosHandler = new UploadHandler()
   },
 
   /**

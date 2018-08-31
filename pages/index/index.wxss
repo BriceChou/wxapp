@@ -50,5 +50,5 @@ image.icon {
 
 .sample-icon {
   width: 100%;
-  height: 480rpx;
+  height: 240rpx;
 }

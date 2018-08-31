@@ -18,6 +18,7 @@ function requestCoinRecog(base64Img, matchList) {
       method: 'POST',
       success: function(res) {
         if (res.data) {
+          console.log(res.data)
           let resultList = _parseRecogResult(res.data, matchList)
           if (resultList) {
             resolve(resultList)
@@ -61,8 +62,8 @@ function _parseRecogResult(res, matchList) {
 }
 
 function _genRecogAcsToken() {
-  let baiId = 'your_baidu_ai_id'
-  let baidSk = 'your_baidu_ai_screct_key'
+  let baiId = 'https://bricechou.github.io'
+  let baidSk = 'https://bricechou.github.io'
   let baiGenUrl = 'https://aip.baidubce.com/oauth/2.0/token'
   let headerParams = {
     'content-type': 'application/x-www-form-urlencoded'

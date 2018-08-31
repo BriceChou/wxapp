@@ -3,7 +3,7 @@
     <view class="page__title">硬币识别</view>
     <view class="page__desc">由于货币背面图案会存在相同，请尽量提供硬币正面照片。</view>
   </view>
-  <view class="page__bd_spacing">
+  <view class="page__bd">
     <view class="weui-flex">
       <view class="weui-flex__item">
         <view class="upload" bindtap="onUploadImageClick">

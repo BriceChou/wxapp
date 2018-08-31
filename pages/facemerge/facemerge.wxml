@@ -1,9 +1,9 @@
 <view class="page">
-  <view class="page__bd_spacing">
+  <view class="page__hd">
     <view class="page__title">人脸融合</view>
     <view class="page__desc">为保证人脸融合效果，请上传五官端正的正脸照片。</view>
   </view>
-  <view class="page__bd_spacing">
+  <view class="page__bd">
     <view class="weui-flex">
       <view class="weui-flex__item">
         <view class="upload" bindtap="onUploadImageClick">
@@ -16,7 +16,7 @@
       <canvas class="canvas" id="imgCanvas" canvas-id="imgCanvas" disable-scroll="true" />
     </view>
   </view>
-  <view class="page__bd_spacing" hidden='{{tipHidden}}'>
+  <view class="page__bd" hidden='{{tipHidden}}'>
     <!-- Tips start -->
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__bd">

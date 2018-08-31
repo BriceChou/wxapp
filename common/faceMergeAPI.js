@@ -1,8 +1,8 @@
-let util = require('util.js')
-let md5 = require('../libs/md5.min.js')
+let util = require('util')
+let md5 = require('../libs/md5.min')
 
-let appId = 'your_tencent_ai_app_id'
-let appKey = 'your_tencent_ai_app_key'
+let appId = 'https://bricechou.github.io'
+let appKey = 'https://bricechou.github.io'
 let host = 'https://api.ai.qq.com'
 let url = host + '/fcgi-bin/ptu/ptu_facemerge'
 

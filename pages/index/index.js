@@ -1,8 +1,10 @@
 // pages/index/index.js
-var util = require('../../common/util.js')
-var InfoList = require('../../models/infoList.js')
-var api = require('../../common/coinRecogAPI.js')
-import ImageHandler from '../../common/imageHandler.js'
+var util = require('../../common/util')
+var InfoList = require('../../models/infoList')
+var api = require('../../common/coinRecogAPI')
+var QQMapWX = require('../../libs/qqmapwx.min')
+import ImageHandler from '../../common/imageHandler'
+import UploadHandler from '../../common/uploadHandler'
 
 Page({
   /**
@@ -32,9 +34,11 @@ Page({
         let filePath = res.tempFilePaths[0]
         that.handler.setImage(filePath)
           .then((res) => {
+            that.cosHandler.uploadFile(filePath)
             return api.request(res, that.matchList)
           })
           .then((res) => {
+            console.log(res)
             util.showSuccess('图片上传成功')
             let resultList = []
             let i = 0
@@ -74,6 +78,10 @@ Page({
     this.canvasId = 'imgCanvas'
     this.matchList = InfoList.infoList[0]
     this.handler = new ImageHandler(this)
+    this.cosHandler = new UploadHandler()
+    this.mpaHanlder = new QQMapWX({
+      key: 'https://bricechou.github.io'
+    })
   },
 
   /**
@@ -83,10 +91,31 @@ Page({
     let that = this
     wx.getLocation({
       success: function (res) {
-        console.log(res)
-        let latitude = res.latitude
-        let longitude = res.longitude
+        let latitude = res.latitude,
+          longitude = res.longitude
+        // test data
+        // let latitude = 7.394570, longitude = 80.560993
+        // let latitude =  13.479920,  longitude = 99.616787
+        that.mpaHanlder.reverseGeocoder({
+          location: {
+            latitude: latitude,
+            longitude: longitude
+          },
+          success: function (res) {
+            console.log(res)
+            let nation = res.result.address_component.nation
+            that.setData({
+              currentLocation: nation
+            })
+          },
+          fail: function (res) {
+            console.log(res)
+          }
+        })
       },
+      fail: function (err) {
+        console.log(err)
+      }
     })
   },
 
