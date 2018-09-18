@@ -11,12 +11,23 @@ You can scan below QR Code picture to run it on your WeChat.
 
 
 ### 1. Main Screenshot (主要界面截图)
-![主界面](https://github.com/BriceChou/wxapp/blob/master/screenshot/1.png)
+![硬币识别](https://github.com/BriceChou/wxapp/blob/master/screenshot/1.png)
 ![人脸融合](https://github.com/BriceChou/wxapp/blob/master/screenshot/2.png)
+![开发计划](https://github.com/BriceChou/wxapp/blob/master/screenshot/3.png)
 
 ### 2. Running Screenshot (程序运行截图)
-![主界面](https://github.com/BriceChou/wxapp/blob/master/screenshot/1.1.png)
+
+#### 2.1 Coin Recognize（硬币识别）
+
+![硬币识别](https://github.com/BriceChou/wxapp/blob/master/screenshot/1.1.png)
+![硬币识别](https://github.com/BriceChou/wxapp/blob/master/screenshot/1.1.1.png)
+![硬币识别](https://github.com/BriceChou/wxapp/blob/master/screenshot/1.1.2.png)
+![硬币识别](https://github.com/BriceChou/wxapp/blob/master/screenshot/1.1.3.png)
+
+#### 2.2 Face Merge (人脸融合)
+
 ![人脸融合](https://github.com/BriceChou/wxapp/blob/master/screenshot/2.1.png)
+![人脸融合](https://github.com/BriceChou/wxapp/blob/master/screenshot/2.1.1.png)
 
 ### 3. Applied Technology Components (使用的技术方法)
 
