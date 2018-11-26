@@ -6,9 +6,9 @@ This is a simple wechat mini program for Coin Recognize and Face Merge features.
 
 You can scan below QR Code picture to run it on your WeChat.
 
-你可以使用微信扫一扫，扫描下面的二维码，在你的微信上查看具体运行效果。
+你可以使用微信扫一扫，扫描下面的二维码，在你的微信上查看具体运行效果。 
 ![程序二维码](https://github.com/BriceChou/wxapp/blob/master/screenshot/qrcode.jpg)
-
+#### （近期疏于维护，AI 使用接口已到期。但是基础功能还是能够正常使用的，此代码为基础源码，仅供参考。完整源码为上家公司所有，不做另行上传。）
 
 ### 1. Main Screenshot (主要界面截图)
 ![硬币识别](https://github.com/BriceChou/wxapp/blob/master/screenshot/1.png)
